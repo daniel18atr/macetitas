@@ -45,13 +45,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 /*MENU*/
 
 .container-menu{
-    position: fixed;
-    padding: 10px 20px;
+    padding: 10px 10px;
     background: #c595d4;
     display: flex;
-    justify-content: center;
-    margin-top: 110px;
-    width: 100%;
+    
     z-index:4;
 }
 .menu-lista {
