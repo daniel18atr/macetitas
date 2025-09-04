@@ -81,6 +81,7 @@ body{
 
 .container-galeria{ 
     padding: 2rem; /*Padding alrededor de la galeria*/
+    z-index: 3;
 }
 .slider-wrapper {
 	position: relative; /*La posicion es relativa, lo cual es importante mas adelante en el codigo para que funcione correctamente
@@ -88,6 +89,7 @@ body{
     max-width:1000px; /*El ancho maximo del contenedor es de 1000px*/
 	margin: 100px auto 0px; /*Este margen hará que el contenedor se encuentre centrado en el medio de la pantalla con respecto
     al eje y, arriba:200px, izq y derecha: automatico (centro), debajo 0*/
+    z-index: 3;
 }
 
 .slider {
@@ -148,6 +150,7 @@ body{
     column-gap: 20px;
     padding: 20px;
     margin-left: 250px;
+    z-index: 3;
 }
 
 .producto, .producto9, .producto10, .producto11, .producto12,
@@ -167,6 +170,7 @@ body{
     height: 100%; 
     max-width: fit-content; /*Hace que el elemento se ajuste a su contenido, de manera que no se expanda
     mas allá del ancho necesario para exhibir su contenido*/
+    z-index: 3;
 }
 
 .container-productos a{
@@ -210,7 +214,7 @@ body{
     position:fixed; 
     top:125px; 
     left: 5px; 
-    z-index:3;
+    z-index:1;
 }
 .personajes-izq img, .personajes-der img{
     width: 250px;
@@ -219,7 +223,7 @@ body{
     position:fixed;
     top:125px;
     right:30px;
-    z-index:3;
+    z-index:1;
 }
 
                                                         /*PAGINA CATEGORIAS*/
