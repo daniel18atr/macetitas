@@ -174,9 +174,6 @@ a{
     border: 5px solid plum;
 }
 .slider-login {
-    border: 5px solid #885996;
-    background-color: ;
-    border-radius: 50px;
     z-index: 4;
     width: 100%;        
     overflow: hidden;   
