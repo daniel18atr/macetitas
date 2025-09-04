@@ -1,0 +1,214 @@
+*{
+    font-family: 'century gothic';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+body{
+    background-color: #f1f1f1;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='24' viewBox='0 0 88 24'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='autumn' fill='%239C92AC' fill-opacity='0.14'%3E%3Cpath d='M10 0l30 15 2 1V2.18A10 10 0 0 0 41.76 0H39.7a8 8 0 0 1 .3 2.18v10.58L14.47 0H10zm31.76 24a10 10 0 0 0-5.29-6.76L4 1 2 0v13.82a10 10 0 0 0 5.53 8.94L10 24h4.47l-6.05-3.02A8 8 0 0 1 4 13.82V3.24l31.58 15.78A8 8 0 0 1 39.7 24h2.06zM78 24l2.47-1.24A10 10 0 0 0 86 13.82V0l-2 1-32.47 16.24A10 10 0 0 0 46.24 24h2.06a8 8 0 0 1 4.12-4.98L84 3.24v10.58a8 8 0 0 1-4.42 7.16L73.53 24H78zm0-24L48 15l-2 1V2.18A10 10 0 0 1 46.24 0h2.06a8 8 0 0 0-.3 2.18v10.58L73.53 0H78z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.container-encabezado { 
+    position: fixed;
+    width: 100%;
+    height: 15%;
+    background-color:#885996;
+    display: grid;
+    grid-template-columns: 2fr 5fr 1fr; 
+    align-items: center;
+    font-size: larger;
+    z-index: 100;
+}
+.container-logo{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    bottom: 10px;
+}
+.container-logo img{
+    width: 130px;
+    height: 130px;
+}
+
+.container-nombre img {
+    width: 80%;
+    margin-left:20px; 
+    position: relative;
+    bottom: 7px;
+}
+
+/*MENU*/
+
+.container-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c595d4;
+    height: 70px;
+    border-radius: 10px;
+    position: relative;
+    bottom: 10px;
+    width: 100%;
+}
+
+.enlaces {
+    padding: 10px;
+    margin: 10px;
+    background-color: #2b0833;
+    color: rgb(176, 71, 176);
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.enlaces a{
+    text-decoration: none;
+}
+
+.enlaces:hover {
+    transform: scale(1.1);
+    background-color: plum;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+
+.enlaces a:visited{
+    color: rgb(176, 71, 176);
+}
+
+
+
+.personajes-izq{ /*"pagedolls" es decir, personajes que se encuentran a un costado de la pagina
+    y acompañan al usuario mientras este hace scroll*/
+    position:fixed; 
+    top:125px; 
+    left: 5px; 
+    z-index:1;
+}
+.personajes-izq img, .personajes-der img{
+    width: 250px;
+}
+.personajes-der{
+    position:fixed;
+    top:125px;
+    right:30px;
+    z-index:1;
+}
+
+
+    /*login*/
+.form{
+    position: fixed;
+    left: 35%;
+    top: 110px;
+    padding: 10px;
+    z-index: 2;
+}
+
+form{
+    z-index: 5;
+    background-color: #2b0833;
+    border-radius: 20px;
+    padding: 30px;
+    width: 400px;
+    color: purple;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+label{  
+    color: aqua;
+}
+
+.box-req{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    text-align: end;
+}
+
+input{
+    margin: 10px;
+    border-radius: 15px;
+    border: 2px solid plum;
+    width: 100%;
+    height: 33px;
+}
+
+
+.iniciar{
+    color:darkorchid;
+    font-weight: bold;
+    font-size: 20px;
+    font-size: 20px;
+    width: 60%;
+    height: 35px;
+    transition: 0.3s;
+}
+
+.iniciar:hover{
+    background-color: plum;
+    transform: scale(1.1);
+}
+
+
+
+/*slider*/
+p{
+    color: plum;
+    text-align: center;
+    padding: 7px 0;
+    font-size: 18px;
+}
+h3{
+    color: plum;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+.img-box:hover {  
+    transform: scale(1.1);
+    border: 5px solid plum;
+}
+.slider-login {
+    border: 5px solid #885996;
+    background-color: ;
+    border-radius: 50px;
+    z-index: 4;
+    width: 100%;        
+    overflow: hidden;   
+    position: fixed;
+    left: 50%;
+    bottom: 5px;       
+    padding: 14px;
+    transform: translateX(-50%);
+}
+.slider-track {
+  display: flex;
+  width: max-content; 
+  animation: scroll 15s linear infinite;
+}
+.img-box{
+    width: 160PX;
+    height: 100%;
+    margin: 0px 20px;
+    border-radius: 20px;
+    border: 5px solid #2b0833;
+    background-color: #2b0833;
+    transition: transform 0.3s, border 0.3s ;
+    box-shadow: 5px 5px 10px gray;
+}
+.img-login {
+    width: 150PX;
+    height: 150px;
+    border-radius: 15px;
+    flex-shrink: 0;
+    border: 4px solid seagreen;
+}
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
