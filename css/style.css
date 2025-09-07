@@ -21,6 +21,7 @@ body{
     align-items: center;
     font-size: larger;
     z-index: 100;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
 }
 .container-logo{
     display: flex;
@@ -52,6 +53,7 @@ body{
     position: relative;
     bottom: 10px;
     width: 100%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 }
 
 .enlaces {
@@ -63,18 +65,15 @@ body{
     transition: transform 0.3s, background-color 0.3s;
 }
 
-.enlaces a{
-    text-decoration: none;
-}
-
 .enlaces:hover {
     transform: scale(1.1);
     background-color: plum;
     transition: transform 0.3s, background-color 0.3s;
-  }
+}
 
-.enlaces a:visited{
+a{
     color: rgb(176, 71, 176);
+    text-decoration: none;
 }
 
 
