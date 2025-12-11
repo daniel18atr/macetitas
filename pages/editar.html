@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar producto</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container-encabezado">
+        <div class="container-nombre">
+            <a href="../index.html"><img src="../img/Macetitas&Co nuevo.png" alt="macetitas y co" title="Volver a inicio"></a>
+        </div>
+        <div class="container-menu">
+            <a href="https://www.instagram.com/macetitas_y_co/"><div class="enlaces">Seguinos en Instagram!</div></a>
+            <a href="categoriasmenu.html"><div class="enlaces">Categorias</div></a>
+            <a href="nosotros.html"><div class="enlaces">Nosotros</div></a>
+            <a href="contacto.html"><div class="enlaces">Contacto</div></a>
+        </div>
+        <div class="container-logo">
+            <img src="../img/macetitas.png" alt="una maceta sonriente rodeada por el nombre del emprendimiento">
+        </div>
+    </div>
+
+    <div class="container-agregar">
+        <h2 style="color: #2b0833; margin-bottom: 20px; font-size: 30px;">Editar Producto</h2>
+        <form id="formProducto">
+            <input class="info-agregar" type="text" id="nombre" placeholder="Nombre del producto" required><br><br>
+            <input class="info-agregar" type="number" id="precio" placeholder="Precio" required><br><br>
+            <div class="elegir">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" required>
+                    <option value="">Elegir categoría</option>
+                    <option value="macetas">Macetas</option>
+                    <option value="tutores">Tutores</option>
+                </select>
+            </div><br>
+            <input class="elegir" type="file" id="imagen" accept="image/*"><br><br>
+            <div class="centrar-agregar">
+                <button class="agregar" type="submit">Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+
+    <script type="module" src="/js/editar.js"></script>
+</body>
+</html>
