@@ -79,7 +79,6 @@ a{
 }
 
 
-
 .container-galeria{ 
     padding: 2rem; /*Padding alrededor de la galeria*/
     z-index: 3;
@@ -145,6 +144,7 @@ a{
 
 .container-productos {
     display: grid; /*Establece un sistema de cuadrículas*/
+    width: 67%;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /*Se irán agregando tantas columnas como sea posible, una vez
     no entren mas columnas en la pantalla, se iniciará una fila nueva debajo */
     row-gap: 60px; 
@@ -317,4 +317,60 @@ a{
     }
     #facebook{
         margin-left: 320px;
+    }
+
+
+    /*añadir productos*/
+    .container-agregar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 140px;
+        background-color: #9963a9;
+        height: 470px;
+        width: 470px;
+        margin: 0 auto;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+        border-radius: 50px;
+    }
+
+    form .info-agregar{
+    border-radius: 10px;
+    border: 2px solid #2b0833;
+    height: 33px;
+    width: 100%;
+    
+    }
+
+    .elegir{
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid #2b0833;
+    }
+
+    .centrar-agregar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .agregar{
+    border-radius: 10px;
+    border: 2px solid rgb(110, 60, 110);
+    height: 33px;
+    width: 50%;
+    color: plum;
+    background-color: #2b0833;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    }
+
+    .agregar:hover{
+        transform: scale(1.1);
+        background-color: rgb(110, 60, 110);
+    }
+
+    select{
+        border: none;
     }

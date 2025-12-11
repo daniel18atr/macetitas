@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar producto</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+        <div class="container-encabezado" style="display: flex; justify-content: center;">
+           
+            <a href="/index.html"><img src="/img/Macetitas&Co nuevo.png" alt="macetitas y co" style="width: 450px;"></a> 
+        
+        </div>
+
+    <div class="container-agregar">
+        <h2 style="color: #2b0833; margin-bottom: 20px; font-size: 30px;">Agregar Producto</h2>
+        <form id="formProducto">
+            <input class="info-agregar" type="text" id="nombre" placeholder="Nombre del producto" required><br><br>
+            <input class="info-agregar" type="number" id="precio" placeholder="Precio" required><br><br>
+            <div class="elegir">
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" required>
+                <option value="">Elegir categoría</option>
+                <option value="macetas">Macetas</option>
+                <option value="tutores">Tutores</option>
+            </select></div><br>
+            <input class="elegir" type="file" id="imagen" accept="image/*" required><br><br>
+        <div class="centrar-agregar">
+            <button class="agregar" type="submit">Agregar producto</button>
+        </div>
+        </form>
+    </div>
+         <h2 style="text-align: center; margin-top: 30px; color: #2b0833;font-size: 40px;">Productos cargados</h2>
+        <div id="listaProductos" class="container-productos"></div>
+<script type="module">
+    import { cargarProductos } from "/js/productos.js";
+    cargarProductos("agregar")
+</script>
+<script type="module" src="/js/admin.js"></script>
+
+            <div class="personajes-izq">
+            <img src="/img/personajes.png"></div>
+
+            <div class="personajes-der">
+            <img src="/img/personajes.png"></div>
+
+
+
+</body>
+</html>
