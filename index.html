@@ -20,7 +20,11 @@
                     <a href="pages/contacto.html"><div class="enlaces">Contacto</div></a>
                     <a href="pages/login.html"><div class="enlaces">Iniciar</div></a>
                     <a href="pages/registro.html"><div class="enlaces">Crea tu Cuenta</div></a>
-                    <a href="pages/carrito.html"><span class="material-icons">shopping_cart</span></a>
+                    <a href="pages/carrito.html">
+                        <span class="material-icons">shopping_cart</span>
+                        <span id="contador-carrito" class="contador-carrito">0</span>
+                    </a>
+
 
             </div>
             <div class="container-logo">
@@ -47,7 +51,10 @@
 <script type="module">
     import { cargarProductos } from "/js/productos.js";
     cargarProductos("productos");
+    import { actualizarContadorCarrito } from "/js/carrito.js";
+    actualizarContadorCarrito();
 </script>
+
 
             <div class="personajes-izq">
             <img src="img/personajes.png"></div>

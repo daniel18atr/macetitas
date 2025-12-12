@@ -1,6 +1,8 @@
 import { db } from "./firebase.js";
 import { collection, getDocs, query, where, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
+import { agregarAlCarrito } from "./carrito.js";
+
 export async function cargarProductos(pagina, categoriaFiltrada = null) {
     const contenedor = document.getElementById("listaProductos");
     contenedor.innerHTML = "";
@@ -13,32 +15,33 @@ export async function cargarProductos(pagina, categoriaFiltrada = null) {
 
     const querySnapshot = await getDocs(ref);
 
-    querySnapshot.forEach((doc) => {
-        const p = doc.data();
+    querySnapshot.forEach((docSnap) => {
+        const p = docSnap.data();
 
         let botones = "";
-        
-        document.addEventListener("click", (e) => {
-    if (e.target.textContent === "Agregar al carrito") {
-        const id = e.target.getAttribute("data-id");
-        agregarAlCarrito(id);
-    }
-});
-
 
         if (pagina === "agregar") {
             botones = `
             <div class="container-button" style="margin-top: 5px">
-                <p style="color: rgb(176, 71, 176);" data-id="${doc.id}" class="editar">Editar</p>
+                <a href="/pages/editar.html?id=${docSnap.id}">
+                    <p style="color: rgb(176, 71, 176);" class="editar">Editar</p>
+                </a>
             </div>
             <div class="container-button" style="margin-top: 10px">
-                <p style="color: rgb(176, 71, 176);" data-id="${doc.id}" class="eliminar">Eliminar</p>
+                <p style="color: rgb(176, 71, 176);" data-id="${docSnap.id}" class="eliminar">Eliminar</p>
             </div>
             `;
         } else if (pagina === "productos") {
             botones = `
             <div class="container-button">
-                <p style="color: rgb(176, 71, 176);" data-id="${doc.id}">Agregar al carrito</p>
+                <p class="btn-agregar" 
+                    style="color: rgb(176, 71, 176);" 
+                    data-id="${docSnap.id}"
+                    data-nombre="${p.nombre}"
+                    data-precio="${p.precio}"
+                    data-imagen="${p.imagen}">
+                    Agregar al carrito
+                </p>
             </div>
             `;
         }
@@ -54,25 +57,40 @@ export async function cargarProductos(pagina, categoriaFiltrada = null) {
         `;
     });
 
-    // Agregar evento de eliminación
     document.querySelectorAll('.eliminar').forEach(button => {
         button.addEventListener('click', async (e) => {
             const productId = e.target.getAttribute('data-id');
             await eliminarProducto(productId);
         });
     });
+
+    document.querySelectorAll('.btn-agregar').forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            const producto = {
+                id: e.target.dataset.id,
+                nombre: e.target.dataset.nombre,
+                precio: Number(e.target.dataset.precio),
+                imagen: e.target.dataset.imagen
+            };
+
+            agregarAlCarrito(producto);
+            alert("Producto agregado correctamente");
+
+        });
+    });
 }
 
-// Función para eliminar un producto
+//eliminar un producto 
 async function eliminarProducto(productId) {
     const productRef = doc(db, "productos", productId);
     try {
         await deleteDoc(productRef);
-        console.log('Producto eliminado con éxito');
         alert('Producto eliminado con éxito');
-        cargarProductos("agregar"); // Recargar la lista de productos después de eliminar
+        cargarProductos("agregar");
     } catch (error) {
-        console.error('Error al eliminar el producto: ', error);
         alert('Error al eliminar el producto');
+        console.error(error);
     }
 }
+
+

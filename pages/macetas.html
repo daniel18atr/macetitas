@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body> 
     <div class="container-encabezado">
@@ -16,6 +18,10 @@
             <a href="categoriasmenu.html"><div class="enlaces">Categorias</div></a>
             <a href="nosotros.html"><div class="enlaces">Nosotros</div></a>
             <a href="contacto.html"><div class="enlaces">Contacto</div></a>
+            <a href="pages/carrito.html">
+                <span class="material-icons">shopping_cart</span>
+                <span id="contador-carrito" class="contador-carrito">0</span>
+            </a>
         </div>
         <div class="container-logo">
             <img src="../img/macetitas.png" alt="una maceta sonriente rodeada por el nombre del emprendimiento">
@@ -46,6 +52,9 @@
     <script type="module">
     import { cargarProductos } from "/js/productos.js";
     cargarProductos("productos", "macetas");
+
+    import { actualizarContadorCarrito } from "/js/carrito.js";
+    actualizarContadorCarrito();
     </script>
 
         <div>

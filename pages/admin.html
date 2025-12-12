@@ -35,12 +35,34 @@
                 </select>
             </div><br>
             <input class="elegir" type="file" id="imagen" accept="image/*" required><br><br>
+            <div class="container-img">
+            <img id="preview" style="max-width: 200px; border-radius: 10px;"><br>
+            </div><br>
             <div class="centrar-agregar">
                 <button class="agregar" type="submit">Agregar producto</button>
-            </div>
+            </div><br>
         </form>
     </div>
+    <script>
+    const inputImagen = document.getElementById("imagen");
+const preview = document.getElementById("preview");
 
+inputImagen.addEventListener("change", function () {
+    const file = this.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+            preview.setAttribute("src", this.result);
+            preview.style.display = "block";
+        });
+
+        reader.readAsDataURL(file);
+    }
+});
+
+</script>
     <h2 style="text-align: center; margin-top: 30px; color: #2b0833;font-size: 40px;">Productos cargados</h2>
     <div id="listaProductos" class="container-productos"></div>
 

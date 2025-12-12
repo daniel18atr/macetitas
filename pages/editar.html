@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div class="container-agregar">
+    <div class="container-agregar" style="margin-bottom: 50px;">
         <h2 style="color: #2b0833; margin-bottom: 20px; font-size: 30px;">Editar Producto</h2>
         <form id="formProducto">
             <input class="info-agregar" type="text" id="nombre" placeholder="Nombre del producto" required><br><br>
@@ -34,10 +34,13 @@
                     <option value="tutores">Tutores</option>
                 </select>
             </div><br>
-            <input class="elegir" type="file" id="imagen" accept="image/*"><br><br>
+            <input class="elegir" type="file" id="imagen" accept="image/*" required><br><br>
+            <div class="container-img">
+            <img id="preview" style="max-width: 200px; border-radius: 10px;"><br>
+            </div><br>
             <div class="centrar-agregar">
-                <button class="agregar" type="submit">Guardar cambios</button>
-            </div>
+                <button class="agregar" type="submit">Editar Producto</button>
+            </div><br>
         </form>
     </div>
 
