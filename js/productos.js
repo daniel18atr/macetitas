@@ -19,6 +19,14 @@ export async function cargarProductos(pagina, categoriaFiltrada = null) {
         const p = doc.data();
 
         let botones = "";
+        
+        document.addEventListener("click", (e) => {
+    if (e.target.textContent === "Agregar al carrito") {
+        const id = e.target.getAttribute("data-id");
+        agregarAlCarrito(id);
+    }
+});
+
 
         if (pagina === "agregar") {
             botones = `
