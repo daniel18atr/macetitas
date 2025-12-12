@@ -407,3 +407,18 @@ a{
     box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
     border-radius: 10px;
 }
+
+
+.btn-eliminar{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2b0833;
+    color: rgb(237, 163, 237);
+    border-radius: 8px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.btn-eliminar:hover {  
+    transform: scale(1.1);  
+    background-color: plum; 
+    cursor: pointer;
+  }
